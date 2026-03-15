@@ -1,11 +1,18 @@
 # 🔍 PyFile-Analyzer
 
-Herramienta de análisis forense y reputación de archivos escrita en Python.
+Herramienta de análisis forense y reputación de archivos escrita en Python. 
 
 ## 🛠️ Funcionalidades
-- **Magic Number Detection:** Identifica el tipo de archivo real basándose en sus bytes iniciales (firmas), ignorando la extensión.
-- **Metadata Extraction:** Extrae información interna del archivo (fechas, autor, etc.).
-- **Integrity & Reputation:** Calcula el Hash (SHA-256) y consulta la API de VirusTotal para detectar amenazas.
+- **Smart Detection:** Identifica el tipo de archivo real (Magic Numbers) y detecta scripts (Python, Bash, HTML) analizando su contenido, incluso si no tienen extensión.
+- **Integridad:** Genera el hash **SHA-256** del archivo para identificación única.
+- **Reputación:** Consulta la API de **VirusTotal** para verificar si el archivo ha sido reportado como malicioso.
+- **Multiplataforma:** Funciona en Windows, Linux y macOS.
 
-## 🚀 Uso
-*Próximamente...*
+## 🚀 Instalación
+1. Clona el repo.
+2. Instala dependencias: `pip install requests filetype python-dotenv colorama`.
+3. Crea un archivo `.env` con tu `VT_API_KEY=tu_clave_aqui`.
+
+## 🖥️ Uso
+```bash
+python3 anapyzer.py
